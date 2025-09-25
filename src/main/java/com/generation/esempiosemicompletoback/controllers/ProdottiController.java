@@ -4,10 +4,7 @@ import com.generation.esempiosemicompletoback.model.dtos.ProductGetDto;
 import com.generation.esempiosemicompletoback.model.entities.Prodotto;
 import com.generation.esempiosemicompletoback.model.repository.ProdottoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,4 +59,10 @@ public class ProdottiController
 //        return repo.findAll();
 //
 //    }
+    //api/products/3
+    @DeleteMapping("{id}")
+    public void cancella(@PathVariable Long id)
+    {
+        repo.deleteById(id);
+    }
 }
